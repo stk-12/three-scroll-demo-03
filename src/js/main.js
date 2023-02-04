@@ -186,6 +186,27 @@ class Main {
       duration: 1.2,
       ease: "Expo.easeInOut",
     })
+
+
+    const tl5 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section05',
+        start: 'bottom bottom',
+        toggleActions: 'play none none reverse',
+        markers: true,
+      }
+    });
+    tl5.to(this.group.position, {
+      z: this.distance * 0.5,
+      duration: 1.2,
+      ease: "Expo.easeInOut",
+    })
+    .to(this.group.rotation, {
+      y: radian(710),
+      x: radian(15),
+      duration: 1.2,
+      ease: "Expo.easeInOut",
+    }, "<")
     
     
   }
