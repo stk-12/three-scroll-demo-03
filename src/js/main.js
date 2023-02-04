@@ -139,7 +139,6 @@ class Main {
     });
     tl1.to(this.group.rotation, {
       x: radian(0),
-      // duration: 1.6,
       ease: "Linear.easeNone",
     })
 
@@ -147,7 +146,7 @@ class Main {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section03',
-        start: 'top top',
+        start: '20% center',
         toggleActions: 'play none none reverse',
         markers: true,
       }
@@ -161,7 +160,7 @@ class Main {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section04',
-        start: 'top top',
+        start: '20% center',
         toggleActions: 'play none none reverse',
         markers: true,
       }
@@ -176,7 +175,7 @@ class Main {
     const tl4 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section05',
-        start: 'top top',
+        start: '20% center',
         toggleActions: 'play none none reverse',
         markers: true,
       }
@@ -190,8 +189,8 @@ class Main {
 
     const tl5 = gsap.timeline({
       scrollTrigger: {
-        trigger: '#section05',
-        start: 'bottom bottom',
+        trigger: '#section06',
+        start: 'top center',
         toggleActions: 'play none none reverse',
         markers: true,
       }
