@@ -41,7 +41,14 @@ class Main {
 
     this.distance = null;
 
-    this.mesh = null;
+    this.geometries = [
+      new THREE.ConeGeometry(40, 80, 40),
+      new THREE.TorusGeometry(40, 20, 40, 40),
+      new THREE.CylinderGeometry(40, 40, 80, 40),
+      new THREE.SphereGeometry(50, 46, 46),
+    ]
+
+    // this.mesh = null;
     this.group = new THREE.Group();
 
     // this.controls = null;
@@ -97,32 +104,14 @@ class Main {
   }
 
   _addMesh() {
-    const geometry = new THREE.DodecahedronGeometry(50, 0);
 
     for(let i = 0; i < 4; i++){
-      let material = new THREE.MeshStandardMaterial({
-        color: this.colors[i],
-        opacity: 0.8,
-        transparent: true,
-        roughness: 0,
-        // envMap: textureCube,
-      });
-
-
-      const mesh1 = new THREE.Mesh(geometry, material);
-      mesh1.material.side = THREE.BackSide; // back faces
-      mesh1.renderOrder = 0;
-
-      const mesh2 = new THREE.Mesh(geometry, material.clone());
-      mesh2.material.side = THREE.FrontSide; // front faces
-      mesh2.renderOrder = 1;
-
-      mesh1.position.z = 200 * Math.sin((i / 4) * Math.PI * 2);
-      mesh2.position.z = 200 * Math.sin((i / 4) * Math.PI * 2);
-      mesh1.position.x = 200 * Math.cos((i / 4) * Math.PI * 2);
-      mesh2.position.x = 200 * Math.cos((i / 4) * Math.PI * 2);
-      
-      this.group.add(mesh1, mesh2);
+      const geometry = this.geometries[i];
+      const material = new THREE.MeshToonMaterial({ color: this.colors[i] });
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.z = 200 * Math.sin((i / 4) * Math.PI * 2);
+      mesh.position.x = 200 * Math.cos((i / 4) * Math.PI * 2);   
+      this.group.add(mesh);
     }
 
     this.group.position.z = this.distance;
@@ -168,12 +157,6 @@ class Main {
       duration: 1.2,
       ease: "Expo.easeInOut",
     })
-    // .to('.scroll', {
-    //   background: this.bgColors[0],
-    //   duration: 0.2,
-    //   ease: "Linear.easeNone",
-    // })
-
 
     const tl3 = gsap.timeline({
       scrollTrigger: {
@@ -204,6 +187,7 @@ class Main {
       ease: "Expo.easeInOut",
     })
     
+    
   }
 
 
@@ -222,6 +206,7 @@ class Main {
 
     for(let i = 0; i < this.group.children.length; i++) {
       this.group.children[i].rotation.y += 0.005;
+      this.group.children[i].rotation.x += 0.001;
     }
     
     //レンダリング
