@@ -133,7 +133,7 @@ class Main {
         start: 'top top',
         end: 'bottom top',
         toggleActions: 'play none none reverse',
-        markers: true,
+        // markers: true,
         scrub: true,
       }
     });
@@ -148,7 +148,7 @@ class Main {
         trigger: '#section03',
         start: '20% center',
         toggleActions: 'play none none reverse',
-        markers: true,
+        // markers: true,
       }
     });
     tl2.to(this.group.rotation, {
@@ -156,13 +156,20 @@ class Main {
       duration: 1.2,
       ease: "Expo.easeInOut",
     })
+    // .to(this.group.children[0].rotation, {
+    //   y: '+=6',
+    //   z: '+=10',
+    //   duration: 1.2,
+    //   ease: "Expo.easeInOut",
+    // }, "<")
+
 
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section04',
         start: '20% center',
         toggleActions: 'play none none reverse',
-        markers: true,
+        // markers: true,
       }
     });
     tl3.to(this.group.rotation, {
@@ -170,6 +177,12 @@ class Main {
       duration: 1.2,
       ease: "Expo.easeInOut",
     })
+    // .to(this.group.children[1].rotation, {
+    //   y: '+=6',
+    //   z: '+=10',
+    //   duration: 1.2,
+    //   ease: "Expo.easeInOut",
+    // }, "<")
 
 
     const tl4 = gsap.timeline({
@@ -177,7 +190,7 @@ class Main {
         trigger: '#section05',
         start: '20% center',
         toggleActions: 'play none none reverse',
-        markers: true,
+        // markers: true,
       }
     });
     tl4.to(this.group.rotation, {
@@ -192,7 +205,7 @@ class Main {
         trigger: '#section06',
         start: 'top center',
         toggleActions: 'play none none reverse',
-        markers: true,
+        // markers: true,
       }
     });
     tl5.to(this.group.position, {
