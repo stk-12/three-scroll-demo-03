@@ -146,7 +146,7 @@ class Main {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section03',
-        start: '20% center',
+        start: '10% center',
         toggleActions: 'play none none reverse',
         // markers: true,
       }
@@ -167,7 +167,7 @@ class Main {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section04',
-        start: '20% center',
+        start: '10% center',
         toggleActions: 'play none none reverse',
         // markers: true,
       }
@@ -188,7 +188,7 @@ class Main {
     const tl4 = gsap.timeline({
       scrollTrigger: {
         trigger: '#section05',
-        start: '20% center',
+        start: '10% center',
         toggleActions: 'play none none reverse',
         // markers: true,
       }
@@ -238,8 +238,8 @@ class Main {
     this.lenis.raf(time);
 
     for(let i = 0; i < this.group.children.length; i++) {
-      this.group.children[i].rotation.y += 0.005;
-      this.group.children[i].rotation.x += 0.001;
+      this.group.children[i].rotation.y += 0.006;
+      this.group.children[i].rotation.x += 0.002;
     }
     
     //レンダリング
