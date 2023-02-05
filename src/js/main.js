@@ -219,6 +219,24 @@ class Main {
       duration: 1.2,
       ease: "Expo.easeInOut",
     }, "<")
+
+
+    // scrubですべてのアニメーションを同期させる
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.scroll',
+    //     start: 'top top',
+    //     end: 'bottom bottom',
+    //     // markers: true,
+    //     scrub: true,
+    //   }
+    // });
+    // tl.to(this.group.rotation, { x: radian(0) })
+    //   .to(this.group.rotation, { y: radian(90) })
+    //   .to(this.group.rotation, { y: radian(180) })
+    //   .to(this.group.rotation, { y: radian(270) })
+    //   .to(this.group.position, { z: this.distance * 0.5 })
+    //   .to(this.group.rotation, { y: radian(710), x: radian(15) }, "<"); 
     
     
   }
